@@ -31,7 +31,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen')
+database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen' 'solaris')
 
 function startProcessingTime() {
         start=$(($(date +%s%N)/1000000))
