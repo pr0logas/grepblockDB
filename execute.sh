@@ -108,5 +108,5 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
         reformatToJSON
 
 else
-        echo "{\"FATAL\" : \"No data found among all ${#database[@]} blockchains. You can enter: block hash, number or transaction hash (aka txid). Please take a note that we are not tracking **wallet addresses**.\"}" > $file
+        echo "{\"FATAL\" : \"No data found among all ${#database[@]} blockchains. You can enter: block hash, number or transaction hash (aka txid). Please take a note that we are not tracking **wallet addresses**'.\"}" > $file
 fi
