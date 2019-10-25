@@ -10,7 +10,7 @@ echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` User INPUT: $1" >> $logFile
 
 # Count symbols in user INPUT
 checkUserInput="$(echo "$1" | wc -c)"
-checkUserInputforValidation=$(echo "$1" | grep '`~!@#$%^&*()_+=-[]{};:"<>?,./\')
+checkUserInputforValidation=$(echo "$1" | egrep '`|~|@|#|%|\^|&|\*|\(|\)|_|\+|=|-|\||\[|\]|{|}|;|:|"|<|>|\?|,|\.' | echo "$?")
 
 # Divide user input & lua base64 path
 path2="$2"
