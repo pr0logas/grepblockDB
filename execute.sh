@@ -19,7 +19,7 @@ path1="/usr/share/nginx/grepblockcom"
 # Merge user INPUT and lua base64 path
 file="${path1}${path2}"
 
-if [ "$checkUserInputforValidation" -ne "AllGood" ]; then
+if [[ ""${checkUserInputforValidation}"" -ne "AllGood" ]]; then
         echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters" >> $logFile
         exit 1
 
