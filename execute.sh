@@ -20,13 +20,13 @@ path1="/usr/share/nginx/grepblockcom"
 file="${path1}${path2}"
 
 if [[ "${checkUserInputforValidation}" != "AllGood" ]]; then
-        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters: $1" >> $logFile
+        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL ERROR - invalid characters: $1" >> $logFile
         exit 1
 
 elif [[ $(echo $path2) ]]; then
         echo "ALL good let's continue" > /dev/null
 else
-        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - there are no base64 path from NGINX LUA module?" >> $logFile
+        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL ERROR - there are no base64 path from NGINX LUA module?" >> $logFile
         exit 1
 fi
 
@@ -112,5 +112,5 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
         reformatToJSON
 
 else
-        echo "{\"FATAL\" : \"No data found among all ${#database[@]} blockchains. You can enter: block hash, number or transaction hash (aka txid). Please take a note that we are not tracking **wallet addresses**\"}" > $file
+        echo "{\"WARNING\" : \"No data found among all ${#database[@]} blockchains. You can enter: block hash, number or transaction hash (aka txid). Please take a note that we are not tracking **wallet addresses**\"}" > $file
 fi
