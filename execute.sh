@@ -20,7 +20,7 @@ path1="/usr/share/nginx/grepblockcom"
 file="${path1}${path2}"
 
 if [[ "${checkUserInputforValidation}" != "AllGood" ]]; then
-        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters" >> $logFile
+        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters: $1" >> $logFile
         exit 1
 
 elif [[ $(echo $path2) ]]; then
