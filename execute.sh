@@ -21,6 +21,9 @@ file="${path1}${path2}"
 # Check if lua base64 path arrived?
 if [[ $(echo $path2) ]]; then
         echo "ALL good let's continue" > /dev/null
+elif [[ $1 =~ ^[`!@#$%^&*()_+:\"\',./\\]+$ ]]; then
+	echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters" >> $logFile
+	exit 1
 else
         echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - there are no base64 path from NGINX LUA module?" >> $logFile
         exit 1
