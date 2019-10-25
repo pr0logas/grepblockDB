@@ -10,7 +10,7 @@ echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` User INPUT: $1" >> $logFile
 
 # Count symbols in user INPUT
 checkUserInput="$(echo "$1" | wc -c)"
-checkUserInputforValidation=$(echo "$1" | egrep '`|~|@|#|%|\^|&|\*|\(|\)|_|\+|=|-|\||\[|\]|{|}|;|:|"|<|>|\?|,|\.' | echo "$?")
+checkUserInputforValidation=$(echo "$1" | egrep '`|~|@|#|%|\^|&|\*|\(|\)|_|\+|=|-|\||\[|\]|{|}|;|:|"|<|>|\?|,|\.' | echo "foundInvalid" || echo "AllGood")
 
 # Divide user input & lua base64 path
 path2="$2"
@@ -19,7 +19,7 @@ path1="/usr/share/nginx/grepblockcom"
 # Merge user INPUT and lua base64 path
 file="${path1}${path2}"
 
-if [[ "$checkUserInputforValidation" -eq 0 ]]; then
+if [[ "$checkUserInputforValidation" -eq "foundInvalid" ]]; then
         echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters" >> $logFile
         exit 1
 
