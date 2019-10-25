@@ -10,6 +10,7 @@ echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` User INPUT: $1" >> $logFile
 
 # Count symbols in user INPUT
 checkUserInput="$(echo "$1" | wc -c)"
+checkUserInputforValidation=$(echo "$1" | grep '`~!@#$%^&*()_+=-[]{};:"<>?,./\')
 
 # Divide user input & lua base64 path
 path2="$2"
@@ -21,7 +22,7 @@ file="${path1}${path2}"
 # Check if lua base64 path arrived?
 if [[ $(echo $path2) ]]; then
         echo "ALL good let's continue" > /dev/null
-elif [[ $1 =~ ^[`!@#$%^&*()_+:\"\',./\\]+$ ]]; then
+elif [[ "$checkUserInputforValidation" -eq 0 ]]; then
 	echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL error - invalid characters" >> $logFile
 	exit 1
 else
