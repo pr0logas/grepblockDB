@@ -38,7 +38,7 @@ fi
 database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen' 'solaris' 'zcash' 'decred' 'bitcoin-gold')
 
 function checkAssetNameAndTicker() {
-        case ${database[@]} in
+        case $i in
                 'dash')
                         assetName="Dash"
                         assetTicker="DASH"
