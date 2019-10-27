@@ -106,6 +106,7 @@ function checkAssetNameAndTicker() {
                 *)
                         echo "Error no assetName or Ticker set"
                         ;;
+        esac
 }
 
 function startProcessingTime() {
