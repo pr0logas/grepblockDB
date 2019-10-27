@@ -104,7 +104,7 @@ function checkAssetNameAndTicker() {
                         assetTicker="BTG"
                         ;;
                 *)
-                        echo "Error no assetName or Ticker set"
+                        echo "Error no assetName or assetTicker set"
                         exit 1
                         ;;
         esac
@@ -175,7 +175,8 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
 
                                 echo "$foundBlockNumber" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
-                                echo "$assetName & $assetTicker" >> /tmp/check.txt
+                                sed -i "2s@{@{\"assetName\": \"$assetName\"\,@" $file
+                                sed -i "3s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
                         else
                                 echo "No Files Found in $(echo $i)" > /dev/null
 
