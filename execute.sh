@@ -143,7 +143,7 @@ if [[ "$checkUserInput" = 65 ]]; then
                         if [[ $(echo $foundTX) ]]; then
 
                                 echo "$foundTX" | cat - $file | sponge $file
-                                sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"FoundDataIN\": \"$(echo $i)\"\,@" $file
                                 sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
                                 sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
 
@@ -151,7 +151,7 @@ if [[ "$checkUserInput" = 65 ]]; then
                         elif [[ $(echo $foundBlockHash) ]]; then
 
                                 echo "$foundBlockHash" | cat - $file | sponge $file
-                                sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"FoundDataIN\": \"$(echo $i)\"\,@" $file
                                 sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
                                 sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
 
@@ -178,7 +178,7 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
                         if [[ $(echo $foundBlockNumber) ]]; then
 
                                 echo "$foundBlockNumber" | cat - $file | sponge $file
-                                sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"FoundDataIN\": \"$(echo $i)\"\,@" $file
                                 sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
                                 sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
                         else
