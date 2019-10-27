@@ -39,72 +39,73 @@ database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin'
 
 function checkAssetNameAndTicker() {
         case ${database[@]} in
-                dash)
+                'dash')
                         assetName="Dash"
                         assetTicker="DASH"
                         ;;
-                polis)
+                'polis')
                         assetName="Polis"
                         assetTicker="POLIS"
                         ;;
-                adeptio)
+                'adeptio')
                         assetName="Adeptio"
                         assetTicker="ADE"
                         ;;
-                pivx)
+                'pivx')
                         assetName="Pivx"
                         assetTicker="PIVX"
                         ;;
-                bitcoin)
+                'bitcoin')
                         assetName="Bitcoin"
                         assetTicker="BTC"
                         ;;
-                snowgem)
+                'snowgem')
                         assetName="Snowgem"
                         assetTicker="XSG"
                         ;;
-                zcoin)
+                'zcoin')
                         assetName="Zcoin"
                         assetTicker="XZC"
                         ;;
-                syscoin)
+                'syscoin')
                         assetName="Syscoin"
                         assetTicker="SYS"
                         ;;
-                litecoin)
+                'litecoin')
                         assetName="Litecoin"
                         assetTicker="LTC"
                         ;;
-                bitcoin-cash)
+                'bitcoin-cash')
                         assetName="BitcoinCash"
                         assetTicker="BCH"
                         ;;
-                ravencoin)
+                'ravencoin')
                         assetName="Ravencoin"
                         assetTicker="RVN"
                         ;;
-                horizen)
+                'horizen')
                         assetName="Horizen"
                         assetTicker="ZEN"
                         ;;
-                solaris)
+                'solaris')
                         assetName="Solaris"
                         assetTicker="XLR"
                         ;;
-                zcash)
+                'zcash')
                         assetName="Zcash"
                         assetTicker="ZEC"
                         ;;
-                decred)
+                'decred')
                         assetName="Decred"
                         assetTicker="DCR"
                         ;;
-                bitcoin-gold)
+                'bitcoin-gold')
                         assetName="BitcoinGold"
                         assetTicker="BTG"
                         ;;
                 *)
                         echo "Error no assetName or Ticker set"
+                        exit 1
                         ;;
         esac
 }
