@@ -144,12 +144,16 @@ if [[ "$checkUserInput" = 65 ]]; then
 
                                 echo "$foundTX" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
+                                sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
 
 
                         elif [[ $(echo $foundBlockHash) ]]; then
 
                                 echo "$foundBlockHash" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
+                                sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
 
                         else
 
