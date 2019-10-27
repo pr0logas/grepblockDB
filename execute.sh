@@ -37,6 +37,77 @@ fi
 # Assets to loop
 database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen' 'solaris' 'zcash' 'decred' 'bitcoin-gold')
 
+function checkAssetNameAndTicker() {
+        case ${database[@]} in
+                dash)
+                        assetName="Dash"
+                        assetTicker="DASH"
+                        ;;
+                polis)
+                        assetName="Polis"
+                        assetTicker="POLIS"
+                        ;;
+                adeptio)
+                        assetName="Adeptio"
+                        assetTicker="ADE"
+                        ;;
+                pivx)
+                        assetName="Pivx"
+                        assetTicker="PIVX"
+                        ;;
+                bitcoin)
+                        assetName="Bitcoin"
+                        assetTicker="BTC"
+                        ;;
+                snowgem)
+                        assetName="Snowgem"
+                        assetTicker="XSG"
+                        ;;
+                zcoin)
+                        assetName="Zcoin"
+                        assetTicker="XZC"
+                        ;;
+                syscoin)
+                        assetName="Syscoin"
+                        assetTicker="SYS"
+                        ;;
+                litecoin)
+                        assetName="Litecoin"
+                        assetTicker="LTC"
+                        ;;
+                bitcoin-cash)
+                        assetName="BitcoinCash"
+                        assetTicker="BCH"
+                        ;;
+                ravencoin)
+                        assetName="Ravencoin"
+                        assetTicker="RVN"
+                        ;;
+                horizen)
+                        assetName="Horizen"
+                        assetTicker="ZEN"
+                        ;;
+                solaris)
+                        assetName="Solaris"
+                        assetTicker="XLR"
+                        ;;
+                zcash)
+                        assetName="Zcash"
+                        assetTicker="ZEC"
+                        ;;
+                decred)
+                        assetName="Decred"
+                        assetTicker="DCR"
+                        ;;
+                bitcoin-gold)
+                        assetName="BitcoinGold"
+                        assetTicker="BTG"
+                        ;;
+                *)
+                        echo "Error no assetName or Ticker set"
+                        ;;
+}
+
 function startProcessingTime() {
         start=$(($(date +%s%N)/1000000))
 }
@@ -63,6 +134,7 @@ if [[ "$checkUserInput" = 65 ]]; then
 
                 for i in "${database[@]}"
                 do
+                        checkAssetNameAndTicker
                         foundTX="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"tx\" : \"$1\"}, {_id:0, nonce:0, zADEsupply:0})" --quiet $i)"
                         foundBlockHash="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"hash\" : \"$1\"}, {_id:0, nonce:0, zADEsupply:0})" --quiet $i)"
 
@@ -94,12 +166,14 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
         startProcessingTime
                 for i in "${database[@]}"
                 do
+                        checkAssetNameAndTicker
                         foundBlockNumber="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"block\" : $1}, {_id:0, nonce:0, zADEsupply:0})" --quiet $i)"
 
                         if [[ $(echo $foundBlockNumber) ]]; then
 
                                 echo "$foundBlockNumber" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                echo "$assetName & $assetTicker" >> /tmp/check.txt
                         else
                                 echo "No Files Found in $(echo $i)" > /dev/null
 
