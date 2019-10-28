@@ -235,9 +235,9 @@ if [[ "$checkUserInput" = 65 ]]; then
                 done
 
         sed -i "s@{@,{@" $file
-        runtime=$((end-start))
         reformatToJSON
         stopProcessingTime
+        runtime=$((end-start))
 
 elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; then
         startProcessingTime
@@ -263,9 +263,9 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
                 done
 
         sed -i "s@{@,{@" $file
-        runtime=$((end-start))
         reformatToJSON
         stopProcessingTime
+        runtime=$((end-start))
 
 elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1" =~ ^[A-Za-z0-9]+$ ]]; then
         startProcessingTime
@@ -291,9 +291,9 @@ elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1"
                 done
 
         sed -i "s@{@,{@" $file
-        runtime=$((end-start))
         reformatToJSON
         stopProcessingTime
+        runtime=$((end-start))
 
 else
         echo "{\"WARNING\" : \"No data found among all ${#database[@]} blockchains. You can enter: block number or hash, transaction hash (aka txid) and wallet address.\"}" > $file
