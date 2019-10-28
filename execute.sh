@@ -38,74 +38,134 @@ fi
 database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen' 'solaris' 'zcash' 'decred' 'bitcoin-gold')
 
 function checkAssetNameAndTicker() {
-        case $i in
+         case $i in
                 'dash')
                         assetName="Dash"
                         assetTicker="DASH"
-			assetExplorerLinkBlocks='https://live.blockcypher.com/dash/block/'
-			assetExplorerLinkBlockHashs='https://live.blockcypher.com/dash/block/'
-			assetExplorerLinkTransactions='https://live.blockcypher.com/dash/tx/'
-			assetExplorerLinkWallets='https://live.blockcypher.com/dash/address/'
+                        assetExplorerLinkBlocks='https://live.blockcypher.com/dash/block/'
+                        assetExplorerLinkBlockHashs='https://live.blockcypher.com/dash/block/'
+                        assetExplorerLinkTransactions='https://live.blockcypher.com/dash/tx/'
+                        assetExplorerLinkWallets='https://live.blockcypher.com/dash/address/'
                         ;;
                 'polis')
                         assetName="Polis"
                         assetTicker="POLIS"
+                        assetExplorerLinkBlocks='https://blockbook.polispay.org/block/'
+                        assetExplorerLinkBlockHashes='https://blockbook.polispay.org/block/'
+                        assetExplorerLinkTransactions='https://blockbook.polispay.org/tx/'
+                        assetExplorerLinkWallets='https://blockbook.polispay.org/address/'
                         ;;
                 'adeptio')
                         assetName="Adeptio"
                         assetTicker="ADE"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/ade/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/ade/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/ade/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/ade/address.dws?'
                         ;;
                 'pivx')
                         assetName="Pivx"
                         assetTicker="PIVX"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/pivx/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/pivx/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/pivx/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/pivx/address.dws?'
                         ;;
                 'bitcoin')
                         assetName="Bitcoin"
                         assetTicker="BTC"
+                        assetExplorerLinkBlocks='https://live.blockcypher.com/btc/block/'
+                        assetExplorerLinkBlockHashes='https://live.blockcypher.com/btc/block/'
+                        assetExplorerLinkTransactions='https://live.blockcypher.com/btc/tx/'
+                        assetExplorerLinkWallets='https://live.blockcypher.com/btc/address/'
                         ;;
                 'snowgem')
                         assetName="Snowgem"
                         assetTicker="XSG"
+                        assetExplorerLinkBlocks='https://explorer.snowgem.org/block/'
+                        assetExplorerLinkBlockHashes='https://explorer.snowgem.org/block/'
+                        assetExplorerLinkTransactions='https://explorer.snowgem.org/tx/'
+                        assetExplorerLinkWallets='https://explorer.snowgem.org/address/'
                         ;;
                 'zcoin')
                         assetName="Zcoin"
                         assetTicker="XZC"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/xzc/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/xzc/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/xzc/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/xzc/address.dws?'
                         ;;
                 'syscoin')
                         assetName="Syscoin"
                         assetTicker="SYS"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/sys/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/sys/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/sys/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/sys/address.dws?'
                         ;;
                 'litecoin')
                         assetName="Litecoin"
                         assetTicker="LTC"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/ltc/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/ltc/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/ltc/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/ltc/address.dws?'
                         ;;
                 'bitcoin-cash')
                         assetName="BitcoinCash"
                         assetTicker="BCH"
+                        assetExplorerLinkBlocks='https://blockchair.com/bitcoin-cash/block/'
+                        assetExplorerLinkBlockHashes='https://blockchair.com/bitcoin-cash/block/'
+                        assetExplorerLinkTransactions='https://blockchair.com/bitcoin-cash/transaction/'
+                        assetExplorerLinkWallets='https://blockchair.com/bitcoin-cash/address/'
                         ;;
                 'ravencoin')
                         assetName="Ravencoin"
                         assetTicker="RVN"
+                        assetExplorerLinkBlocks='https://ravencoin.network/block/'
+                        assetExplorerLinkBlockHashes='https://ravencoin.network/block/'
+                        assetExplorerLinkTransactions='https://ravencoin.network/tx/'
+                        assetExplorerLinkWallets='https://ravencoin.network/address/'
                         ;;
                 'horizen')
                         assetName="Horizen"
                         assetTicker="ZEN"
+                        assetExplorerLinkBlocks='https://explorer.zensystem.io/block/'
+                        assetExplorerLinkBlockHashes='https://explorer.zensystem.io/block/'
+                        assetExplorerLinkTransactions='https://explorer.zensystem.io/tx/'
+                        assetExplorerLinkWallets='https://explorer.zensystem.io/address/'             
                         ;;
                 'solaris')
                         assetName="Solaris"
                         assetTicker="XLR"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/xlr/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/xlr/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/xlr/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/xlr/address.dws?'  
                         ;;
                 'zcash')
                         assetName="Zcash"
                         assetTicker="ZEC"
+                        assetExplorerLinkBlocks='https://explorer.zcha.in/blocks/'
+                        assetExplorerLinkBlockHashes='https://explorer.zcha.in/blocks/'
+                        assetExplorerLinkTransactions='https://explorer.zcha.in/transactions/'
+                        assetExplorerLinkWallets='https://explorer.zcha.in/accounts/' 
                         ;;
                 'decred')
                         assetName="Decred"
                         assetTicker="DCR"
+                        assetExplorerLinkBlocks='https://explorer.dcrdata.org/block/'
+                        assetExplorerLinkBlockHashes='https://explorer.dcrdata.org/block/'
+                        assetExplorerLinkTransactions='https://explorer.dcrdata.org/tx/'
+                        assetExplorerLinkWallets='https://explorer.dcrdata.org/address/' 
                         ;;
                 'bitcoin-gold')
                         assetName="BitcoinGold"
                         assetTicker="BTG"
+                        assetExplorerLinkBlocks='https://btg.tokenview.com/en/block/'
+                        assetExplorerLinkBlockHashes='https://btg.tokenview.com/en/block/'
+                        assetExplorerLinkTransactions='https://btg.tokenview.com/en/tx/'
+                        assetExplorerLinkWallets='https://btg.tokenview.com/en/address/' 
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
@@ -148,6 +208,10 @@ if [[ "$checkUserInput" = 65 ]]; then
 
                                 echo "$foundTX" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlocks\": \"$assetExplorerLinkBlocks\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlockHashes\": \"$assetExplorerLinkBlockHashes\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkTransactions\": \"$assetExplorerLinkTransactions\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkWallets\": \"$assetExplorerLinkWallets\"\,@" $file
                                 sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
                                 sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
 
@@ -156,6 +220,10 @@ if [[ "$checkUserInput" = 65 ]]; then
 
                                 echo "$foundBlockHash" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlocks\": \"$assetExplorerLinkBlocks\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlockHashes\": \"$assetExplorerLinkBlockHashes\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkTransactions\": \"$assetExplorerLinkTransactions\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkWallets\": \"$assetExplorerLinkWallets\"\,@" $file
                                 sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
                                 sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
 
@@ -183,6 +251,10 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
 
                                 echo "$foundBlockNumber" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlocks\": \"$assetExplorerLinkBlocks\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlockHashes\": \"$assetExplorerLinkBlockHashes\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkTransactions\": \"$assetExplorerLinkTransactions\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkWallets\": \"$assetExplorerLinkWallets\"\,@" $file
                                 sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
                                 sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
                         else
