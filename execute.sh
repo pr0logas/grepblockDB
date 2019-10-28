@@ -42,6 +42,10 @@ function checkAssetNameAndTicker() {
                 'dash')
                         assetName="Dash"
                         assetTicker="DASH"
+			assetExplorerLinkBlocks='https://live.blockcypher.com/dash/block/'
+			assetExplorerLinkBlockHashs='https://live.blockcypher.com/dash/block/'
+			assetExplorerLinkTransactions='https://live.blockcypher.com/dash/tx/'
+			assetExplorerLinkWallets='https://live.blockcypher.com/dash/address/'
                         ;;
                 'polis')
                         assetName="Polis"
