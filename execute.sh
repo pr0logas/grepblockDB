@@ -191,7 +191,6 @@ function reformatToJSON() {
         sed -i "\$a\]" $file
         sed -i "\$a\}" $file
         sed -i '5s/,{/{/' $file
-        chmod 777 $file
 }
 
 
@@ -236,9 +235,9 @@ if [[ "$checkUserInput" = 65 ]]; then
                 done
 
         sed -i "s@{@,{@" $file
-        stopProcessingTime
         runtime=$((end-start))
         reformatToJSON
+        stopProcessingTime
 
 elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; then
         startProcessingTime
@@ -264,9 +263,9 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
                 done
 
         sed -i "s@{@,{@" $file
-        stopProcessingTime
         runtime=$((end-start))
         reformatToJSON
+        stopProcessingTime
 
 elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1" =~ ^[A-Za-z0-9]+$ ]]; then
         startProcessingTime
@@ -292,9 +291,9 @@ elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1"
                 done
 
         sed -i "s@{@,{@" $file
-        stopProcessingTime
         runtime=$((end-start))
         reformatToJSON
+        stopProcessingTime
 
 else
         echo "{\"WARNING\" : \"No data found among all ${#database[@]} blockchains. You can enter: block number or hash, transaction hash (aka txid) and wallet address.\"}" > $file
