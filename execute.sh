@@ -268,7 +268,7 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
         runtime=$((end-start))
         reformatToJSON
 
-elif [[ "$checkUserInput" -ge 25 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1" =~ [^a-zA-Z0-9] ]]; then
+elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1" =~ ^[A-Za-z0-9]+$ ]]; then
         startProcessingTime
                 for i in "${database[@]}"
                 do
@@ -297,5 +297,5 @@ elif [[ "$checkUserInput" -ge 25 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1"
         reformatToJSON
 
 else
-        echo "{\"WARNING\" : \"No data found among all ${#database[@]} blockchains. You can enter: block number or hash, transaction hash (aka txid) and wallet address.}" > $file
+        echo "{\"WARNING\" : \"No data found among all ${#database[@]} blockchains. You can enter: block number or hash, transaction hash (aka txid) and wallet address.\"}" > $file
 fi
