@@ -202,7 +202,7 @@ if [[ "$checkUserInput" = 65 ]]; then
                 do
                         checkAssetNameAndTicker
                         foundTX="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"tx\" : \"$1\"}, {_id:0, nonce:0, zADEsupply:0})" --quiet $i)"
-                        foundBlockHash="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"hash\" : \"$1\"}, {_id:0, nonce:0, zADEsupply:0})" --quiet $i)"
+                        foundBlockHash="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"hash\" : \"$1\"}, {_id:0, nonce:0})" --quiet $i)"
 
                         if [[ $(echo $foundTX) ]]; then
 
@@ -245,11 +245,39 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
                 for i in "${database[@]}"
                 do
                         checkAssetNameAndTicker
-                        foundBlockNumber="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"block\" : $1}, {_id:0, nonce:0, zADEsupply:0})" --quiet $i)"
+                        foundBlockNumber="$(mongo --host $MongoHost --port $MongoPort --eval "db.blocks.find({\"block\" : $1}, {_id:0, nonce:0})" --quiet $i)"
 
                         if [[ $(echo $foundBlockNumber) ]]; then
 
                                 echo "$foundBlockNumber" | cat - $file | sponge $file
+                                sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlocks\": \"$assetExplorerLinkBlocks\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkBlockHashes\": \"$assetExplorerLinkBlockHashes\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkTransactions\": \"$assetExplorerLinkTransactions\"\,@" $file
+                                sed -i "1s@{@{\"assetExplorerLinkWallets\": \"$assetExplorerLinkWallets\"\,@" $file
+                                sed -i "1s@{@{\"assetName\": \"$assetName\"\,@" $file
+                                sed -i "1s@{@{\"assetTicker\": \"$assetTicker\"\,@" $file
+                        else
+                                echo "No Files Found in $(echo $i)" > /dev/null
+
+                        fi
+                done
+
+        sed -i "s@{@,{@" $file
+        stopProcessingTime
+        runtime=$((end-start))
+        reformatToJSON
+
+elif [[ "$checkUserInput" -ge 25 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$checkUserInput" =~ [^a-zA-Z0-9] ]]; then
+        startProcessingTime
+                for i in "${database[@]}"
+                do
+                        checkAssetNameAndTicker
+                        foundWalletAddr="$(mongo --host $MongoHost --port $MongoPort --eval "db.wallets.find({\"wallet\" : $1}, {_id:0, nonce:0})" --quiet $i)"
+
+                        if [[ $(echo $foundWalletAddr) ]]; then
+
+                                echo "$foundWalletAddr" | cat - $file | sponge $file
                                 sed -i "1s@{@{\"FoundDataIn\": \"$(echo $i)\"\,@" $file
                                 sed -i "1s@{@{\"assetExplorerLinkBlocks\": \"$assetExplorerLinkBlocks\"\,@" $file
                                 sed -i "1s@{@{\"assetExplorerLinkBlockHashes\": \"$assetExplorerLinkBlockHashes\"\,@" $file
