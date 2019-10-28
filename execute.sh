@@ -273,7 +273,7 @@ elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 40 ]] && [[ "$1"
                 for i in "${database[@]}"
                 do
                         checkAssetNameAndTicker
-                        foundWalletAddr="$(mongo --host $MongoHost --port $MongoPort --eval "db.wallets.find({\"wallet\" : $1}, {_id:0, nonce:0})" --quiet $i)"
+                        foundWalletAddr="$(mongo --host $MongoHost --port $MongoPort --eval "db.wallets.find({\"wallet\" : \"$1\"}, {_id:0, nonce:0})" --quiet $i)"
 
                         if [[ $(echo $foundWalletAddr) ]]; then
 
