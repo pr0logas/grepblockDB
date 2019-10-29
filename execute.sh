@@ -35,7 +35,9 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen' 'solaris' 'zcash' 'decred' 'bitcoin-gold')
+database=( 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'bitcoin-cash' 'ravencoin' 'horizen' 'solaris' 'zcash' 'decred' 'bitcoin-gold'
+'digibyte'
+)
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -166,6 +168,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://btg.tokenview.com/en/block/'
                         assetExplorerLinkTransactions='https://btg.tokenview.com/en/tx/'
                         assetExplorerLinkWallets='https://btg.tokenview.com/en/address/' 
+                        ;;
+                'digibyte')
+                        assetName="Digibyte"
+                        assetTicker="DGB"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/dgb/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/dgb/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/dgb/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/dgb/address.dws?'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
