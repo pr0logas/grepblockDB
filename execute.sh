@@ -277,7 +277,7 @@ elif  [[ "$checkUserInput" -le 10 ]] && [[ "$checkUserInput" =~ ^[0-9]+$ ]]; the
         runtime=$((end-start))
         reformatToJSON
 
-elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 43 ]] && [[ "$1" =~ ^[A-Za-z0-9]+$ ]]; then
+elif [[ "$checkUserInput" -ge 26 ]] && [[ "$checkUserInput" -le 50 ]] && [[ "$1" =~ ^[A-Za-z0-9]+$ ]]; then
         startProcessingTime
                 for i in "${database[@]}"
                 do
