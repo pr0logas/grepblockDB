@@ -6,7 +6,7 @@ MongoPort=27017
 logFile="/tmp/grepblockUsersInputs.log"
 
 # Log User INPUTS in search bar:
-echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` User INPUT: $1" >> $logFile
+echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` User INPUT: $1 IP: $3" >> $logFile
 
 # Count symbols in user INPUT
 checkUserInput="$(echo "$1" | wc -c)"
@@ -20,7 +20,7 @@ path1="/usr/share/nginx/grepblockcom"
 file="${path1}${path2}"
 
 if [[ "${checkUserInputforValidation}" != "AllGood" ]]; then
-        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL ERROR - invalid characters: $1" >> $logFile
+        echo "`date +%Y-%m-%d\|%H:%M:%S\|%N` FATAL ERROR - invalid characters: $1 IP: $3" >> $logFile
         exit 1
 
 elif [[ $(echo $path2) ]]; then
