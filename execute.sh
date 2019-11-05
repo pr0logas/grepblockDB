@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=( 'horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred'
+database=( 'horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'polis'
 )
 
 function checkAssetNameAndTicker() {
