@@ -139,10 +139,10 @@ function checkAssetNameAndTicker() {
                 'solaris')
                         assetName="Solaris"
                         assetTicker="XLR"
-                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/xlr/block.dws?'
-                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/xlr/block.dws?'
-                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/xlr/tx.dws?'
-                        assetExplorerLinkWallets='https://chainz.cryptoid.info/xlr/address.dws?'  
+                        assetExplorerLinkBlocks='https://explorer.solarisplatform.com/Search?Query='
+                        assetExplorerLinkBlockHashes='https://explorer.solarisplatform.com/Block/'
+                        assetExplorerLinkTransactions='https://explorer.solarisplatform.com/Transaction/'
+                        assetExplorerLinkWallets='https://explorer.solarisplatform.com/Address/'  
                         ;;
                 'zcash')
                         assetName="Zcash"
