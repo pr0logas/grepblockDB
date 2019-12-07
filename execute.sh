@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -183,7 +183,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkTransactions='https://live.reddcoin.com/tx/'
                         assetExplorerLinkWallets='https://live.reddcoin.com/address/'
                         ;;
-
+                'monacoin')
+                        assetName="Monacoin"
+                        assetTicker="MONA"
+                        assetExplorerLinkBlocks='https://mona.chainsight.info/block/'
+                        assetExplorerLinkBlockHashes='https://mona.chainsight.info/block/'
+                        assetExplorerLinkTransactions='https://mona.chainsight.info/tx/'
+                        assetExplorerLinkWallets='https://mona.chainsight.info/address/'
+                        ;;
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
