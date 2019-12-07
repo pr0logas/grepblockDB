@@ -179,7 +179,7 @@ function checkAssetNameAndTicker() {
                         assetName="Reddcoin"
                         assetTicker="RDD"
 			assetExplorerLinkBlocks='https://live.reddcoin.com/block/'
-                        assetExplorerLinkBlockHashes='https://live.reddcoin.com/block/'
+                    	assetExplorerLinkBlockHashes='https://live.reddcoin.com/block/'
                         assetExplorerLinkTransactions='https://live.reddcoin.com/tx/'
                         assetExplorerLinkWallets='https://live.reddcoin.com/address/'
                         ;;
