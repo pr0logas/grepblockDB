@@ -175,6 +175,15 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkTransactions='https://chainz.cryptoid.info/dgb/tx.dws?'
                         assetExplorerLinkWallets='https://chainz.cryptoid.info/dgb/address.dws?'
                         ;;
+                'reddcoin')
+                        assetName="Reddcoin"
+                        assetTicker="RDD"
+			assetExplorerLinkBlocks='https://live.reddcoin.com/block/'
+                        assetExplorerLinkBlockHashes='https://live.reddcoin.com/block/'
+                        assetExplorerLinkTransactions='https://live.reddcoin.com/tx/'
+                        assetExplorerLinkWallets='https://live.reddcoin.com/address/'
+                        ;;
+
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
