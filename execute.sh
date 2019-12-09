@@ -207,6 +207,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkTransactions='http://explorer.safecapital.io/tx/'
                         assetExplorerLinkWallets='http://explorer.safecapital.io/address/'
                         ;;
+                'safeinsure')
+                        assetName="Safeinsure"
+                        assetTicker="SINS"
+                        assetExplorerLinkBlocks='http://explorer.safeinsure.io/block/'
+                        assetExplorerLinkBlockHashes='http://explorer.safeinsure.io/block/'
+                        assetExplorerLinkTransactions='http://explorer.safeinsure.io/tx/'
+                        assetExplorerLinkWallets='http://explorer.safeinsure.io/address/'
+                        ;;
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
