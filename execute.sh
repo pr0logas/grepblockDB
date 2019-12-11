@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -214,6 +214,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='http://explorer.safeinsure.io/block/'
                         assetExplorerLinkTransactions='http://explorer.safeinsure.io/tx/'
                         assetExplorerLinkWallets='http://explorer.safeinsure.io/address/'
+			;;
+                'biblepay')
+                        assetName="Biblepay"
+                        assetTicker="BBP"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/bbp/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/bbp/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/bbp/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/bbp/address.dws?'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
