@@ -232,7 +232,7 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkWallets='http://explorer.htmlcoin.com/address/'
                         ;;
                 'deviantcoin')
-                        assetName="Devianctcoin"
+                        assetName="Deviantcoin"
                         assetTicker="DEV"
                         assetExplorerLinkBlocks='http://explorer.deviantcoin.io/block/'
                         assetExplorerLinkBlockHashes='http://explorer.deviantcoin.io/block/'
