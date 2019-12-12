@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -222,6 +222,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/bbp/block.dws?'
                         assetExplorerLinkTransactions='https://chainz.cryptoid.info/bbp/tx.dws?'
                         assetExplorerLinkWallets='https://chainz.cryptoid.info/bbp/address.dws?'
+                        ;;
+                'htmlcoin')
+                        assetName="Htmlcoin"
+                        assetTicker="HTML"
+                        assetExplorerLinkBlocks='http://explorer.htmlcoin.com//block/'
+                        assetExplorerLinkBlockHashes='http://explorer.htmlcoin.com/block/'
+                        assetExplorerLinkTransactions='http://explorer.htmlcoin.com/tx/'
+                        assetExplorerLinkWallets='http://explorer.htmlcoin.com/address/'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
