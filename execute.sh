@@ -242,10 +242,10 @@ function checkAssetNameAndTicker() {
                 'memetic')
                         assetName="Memetic"
                         assetTicker="MEME"
-                        assetExplorerLinkBlocks='http://explorer.deviantcoin.io/block/'
-                        assetExplorerLinkBlockHashes='http://explorer.deviantcoin.io/block/'
-                        assetExplorerLinkTransactions='http://explorer.deviantcoin.io/tx/'
-                        assetExplorerLinkWallets='http://explorer.deviantcoin.io/address/'
+                        assetExplorerLinkBlocks='http://explorer.memetic.ai/block/'
+                        assetExplorerLinkBlockHashes='http://explorer.memetic.ai/block/'
+                        assetExplorerLinkTransactions='http://explorer.memetic.ai/tx/'
+                        assetExplorerLinkWallets='http://explorer.memetic.ai/address/'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
