@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -262,6 +262,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='http://de.vit.tips/block/'
                         assetExplorerLinkTransactions='http://de.vit.tips/tx/'
                         assetExplorerLinkWallets='http://de.vit.tips/address/'
+                        ;;
+                'groestlcoin')
+                        assetName="Groestlcoin"
+                        assetTicker="GRS"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/grs/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/grs/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/grs/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/grs/address.dws?'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
