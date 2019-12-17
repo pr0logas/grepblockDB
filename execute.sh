@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -246,6 +246,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='http://explorer.memetic.ai/block/'
                         assetExplorerLinkTransactions='http://explorer.memetic.ai/tx/'
                         assetExplorerLinkWallets='http://explorer.memetic.ai/address/'
+                        ;;
+                'deeponion')
+                        assetName="Deeponion"
+                        assetTicker="ONION"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/onion/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/onion/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/onion/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/onion/address.dws?'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
