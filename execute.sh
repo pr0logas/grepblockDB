@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -254,6 +254,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/onion/block.dws?'
                         assetExplorerLinkTransactions='https://chainz.cryptoid.info/onion/tx.dws?'
                         assetExplorerLinkWallets='https://chainz.cryptoid.info/onion/address.dws?'
+                        ;;
+                'vitae')
+                        assetName="Vitae"
+                        assetTicker="VITAE"
+                        assetExplorerLinkBlocks='http://explorer.deviantcoin.io/block/'
+                        assetExplorerLinkBlockHashes='http://explorer.deviantcoin.io/block/'
+                        assetExplorerLinkTransactions='http://explorer.deviantcoin.io/tx/'
+                        assetExplorerLinkWallets='http://explorer.deviantcoin.io/address/'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
