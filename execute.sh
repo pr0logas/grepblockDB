@@ -258,10 +258,10 @@ function checkAssetNameAndTicker() {
                 'vitae')
                         assetName="Vitae"
                         assetTicker="VITAE"
-                        assetExplorerLinkBlocks='http://explorer.deviantcoin.io/block/'
-                        assetExplorerLinkBlockHashes='http://explorer.deviantcoin.io/block/'
-                        assetExplorerLinkTransactions='http://explorer.deviantcoin.io/tx/'
-                        assetExplorerLinkWallets='http://explorer.deviantcoin.io/address/'
+                        assetExplorerLinkBlocks='http://de.vit.tips/block/'
+                        assetExplorerLinkBlockHashes='http://de.vit.tips/block/'
+                        assetExplorerLinkTransactions='http://de.vit.tips/tx/'
+                        assetExplorerLinkWallets='http://de.vit.tips/address/'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
