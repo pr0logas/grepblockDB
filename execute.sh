@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -271,6 +271,13 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkTransactions='https://chainz.cryptoid.info/grs/tx.dws?'
                         assetExplorerLinkWallets='https://chainz.cryptoid.info/grs/address.dws?'
                         ;;
+                'gentarium')
+                        assetName="Gentarium"
+                        assetTicker="GTM"
+                        assetExplorerLinkBlocks='https://explorer.gtmcoin.io/block/'
+                        assetExplorerLinkBlockHashes='https://explorer.gtmcoin.io/block/'
+                        assetExplorerLinkTransactions='https://explorer.gtmcoin.io/tx/'
+                        assetExplorerLinkWallets='https://explorer.gtmcoin.io/address/'
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
