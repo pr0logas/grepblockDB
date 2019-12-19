@@ -278,6 +278,7 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://explorer.gtmcoin.io/block/'
                         assetExplorerLinkTransactions='https://explorer.gtmcoin.io/tx/'
                         assetExplorerLinkWallets='https://explorer.gtmcoin.io/address/'
+			;;
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
