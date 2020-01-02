@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -279,6 +279,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkTransactions='https://explorer.gtmcoin.io/tx/'
                         assetExplorerLinkWallets='https://explorer.gtmcoin.io/address/'
 			;;
+                'ethereum')
+                        assetName="Ethereum"
+                        assetTicker="ETH"
+                        assetExplorerLinkBlocks='https://etherscan.io/block/'
+                        assetExplorerLinkBlockHashes='https://etherscan.io/block/'
+                        assetExplorerLinkTransactions='https://etherscan.io/tx/'
+                        assetExplorerLinkWallets='https://etherscan.io/address/'
+                        ;;
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
