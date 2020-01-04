@@ -313,8 +313,8 @@ function reformatToJSON() {
         sed -i '5s/,{/{/' $file
 }
 
-
-if [[ "$checkUserInput" = 65 ]]; then
+# 65 for BTC like blockchain hashes & 67 for ETH like platforms
+if [[ "$checkUserInput" = 65 ]] || [[ "$checkUserInput" = 67 ]]; then
         startProcessingTime
 
                 for i in "${database[@]}"
