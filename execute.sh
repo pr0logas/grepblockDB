@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MongoHost=10.10.110.247
+MongoHost='mongoHostIP'
 MongoPort=27017
 
 logFile="/tmp/grepblockUsersInputs.log"
