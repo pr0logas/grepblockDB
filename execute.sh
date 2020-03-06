@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum' 'bare')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum' 'bare' 'birake')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -294,6 +294,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://explorer.bare.network/block/'
                         assetExplorerLinkTransactions='https://explorer.bare.network/tx/'
                         assetExplorerLinkWallets='https://explorer.bare.network/address/'
+                        ;;
+                'birake')
+                        assetName="Birake"
+                        assetTicker="BIR"
+                        assetExplorerLinkBlocks='http://explorer.birake.com/block/'
+                        assetExplorerLinkBlockHashes='http://explorer.birake.com/block/'
+                        assetExplorerLinkTransactions='http://explorer.birake.com/tx/'
+                        assetExplorerLinkWallets='http://explorer.birake.com/address/'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
