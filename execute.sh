@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum' 'bare')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -58,10 +58,10 @@ function checkAssetNameAndTicker() {
                 'adeptio')
                         assetName="Adeptio"
                         assetTicker="ADE"
-                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/ade/block.dws?'
-                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/ade/block.dws?'
-                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/ade/tx.dws?'
-                        assetExplorerLinkWallets='https://chainz.cryptoid.info/ade/address.dws?'
+                        assetExplorerLinkBlocks='https://explorer.adeptio.cc/block/'
+                        assetExplorerLinkBlockHashes='https://explorer.adeptio.cc/block/'
+                        assetExplorerLinkTransactions='https://explorer.adeptio.cc/tx/'
+                        assetExplorerLinkWallets='https://explorer.adeptio.cc/address/'
                         ;;
                 'pivx')
                         assetName="Pivx"
@@ -286,6 +286,14 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://etherscan.io/block/'
                         assetExplorerLinkTransactions='https://etherscan.io/tx/'
                         assetExplorerLinkWallets='https://etherscan.io/address/'
+                        ;;
+                'bare')
+                        assetName="Bare"
+                        assetTicker="BARE"
+                        assetExplorerLinkBlocks='https://explorer.bare.network/block/'
+                        assetExplorerLinkBlockHashes='https://explorer.bare.network/block/'
+                        assetExplorerLinkTransactions='https://explorer.bare.network/tx/'
+                        assetExplorerLinkWallets='https://explorer.bare.network/address/'
                         ;;
                 *)
                         echo "Error no assetName or assetTicker set"
