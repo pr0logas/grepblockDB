@@ -35,7 +35,7 @@ fi
 ### Preparing to search content in MongoDB ###
 
 # Assets to loop
-database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum' 'bare' 'birake')
+database=('horizen' 'dash' 'polis' 'adeptio' 'pivx' 'bitcoin' 'snowgem' 'zcoin' 'syscoin' 'litecoin' 'ravencoin' 'decred' 'solaris' 'bitcoin-cash' 'bitcoin-gold' 'digibyte' 'reddcoin' 'monacoin' 'zcash' 'safecapital' 'safeinsure' 'biblepay' 'htmlcoin' 'deviantcoin' 'memetic' 'deeponion' 'vitae' 'groestlcoin' 'gentarium' 'ethereum' 'bare' 'birake' 'bitcore')
 
 function checkAssetNameAndTicker() {
          case $i in
@@ -303,6 +303,13 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkTransactions='http://explorer.birake.com/tx/'
                         assetExplorerLinkWallets='http://explorer.birake.com/address/'
                         ;;
+                'bitcore')
+                        assetName="Bitcore"
+                        assetTicker="BTX"
+                        assetExplorerLinkBlocks='https://chainz.cryptoid.info/btx/block.dws?'
+                        assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/btx/block.dws?'
+                        assetExplorerLinkTransactions='https://chainz.cryptoid.info/btx/tx.dws?'
+                        assetExplorerLinkWallets='https://chainz.cryptoid.info/btx/address.dws?'
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
