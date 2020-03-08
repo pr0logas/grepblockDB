@@ -310,6 +310,7 @@ function checkAssetNameAndTicker() {
                         assetExplorerLinkBlockHashes='https://chainz.cryptoid.info/btx/block.dws?'
                         assetExplorerLinkTransactions='https://chainz.cryptoid.info/btx/tx.dws?'
                         assetExplorerLinkWallets='https://chainz.cryptoid.info/btx/address.dws?'
+			;;
                 *)
                         echo "Error no assetName or assetTicker set"
                         exit 1
